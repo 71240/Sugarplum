@@ -295,12 +295,14 @@ nav a {
 .feature-list {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 .feature-list li {
-  padding: 4px 0;
-  padding-left: 20px;
+  padding: 5px 0;
+  padding-left: 24px;
   position: relative;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
+  line-height: 1.4;
 }
 .feature-list li:before {
   content: "✓";
@@ -308,7 +310,7 @@ nav a {
   position: absolute;
   left: 0;
   font-weight: bold;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
 }
 .seo-cta {
   background-color: var(--pale-pink);
@@ -338,11 +340,36 @@ nav a {
   background-color: #8b5e84;
   transform: scale(1.02);
 }
-.two-column {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 25px;
-  margin: 20px 0;
+
+/* TWO COLUMN - Fixed alignment */
+.party-rentals-section {
+  margin: 25px 0 20px;
+}
+.party-rentals-container {
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+  margin: 20px auto;
+  flex-wrap: wrap;
+}
+.party-rentals-column {
+  flex: 0 1 280px;
+  text-align: center;
+}
+.party-rentals-column h4 {
+  color: var(--plum);
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  font-weight: 600;
+  text-align: center;
+}
+.party-rentals-column .feature-list {
+  text-align: left;
+  display: inline-block;
+  width: 100%;
+}
+.party-rentals-column .feature-list li {
+  text-align: left;
 }
 
 /* GALLERY SECTION - Slimmed */
@@ -432,7 +459,7 @@ nav a {
   font-size: 0.9rem;
 }
 
-/* Titan Section - Slimmed */
+/* Titan Section - With link */
 .titan-section {
   background-color: white;
   padding: 10px 5%;
@@ -444,6 +471,17 @@ nav a {
   align-items: center;
   justify-content: center;
   gap: 6px;
+}
+.tbp-footer a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  color: var(--plum);
+  transition: opacity 0.2s ease;
+}
+.tbp-footer a:hover {
+  opacity: 0.8;
 }
 .tbp-logo img {
   height: 22px;
@@ -479,8 +517,13 @@ nav a {
   .carousel, .gallery {
     grid-template-columns:1fr;
   }
-  .seo-grid, .two-column {
+  .seo-grid {
     grid-template-columns:1fr;
+  }
+  .party-rentals-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 35px;
   }
   .hero h1 {
     font-size:1.6rem;
@@ -580,27 +623,29 @@ nav a {
     </div>
   </div>
 
-  <h3>🎉 Party Rentals for Every Occasion</h3>
-  <div class="two-column">
-    <div>
-      <h4>What We Rent:</h4>
-      <ul class="feature-list">
-        <li>Popcorn machines & cotton candy makers</li>
-        <li>Chocolate fountains & snow cone machines</li>
-        <li>Catering equipment & serving ware</li>
-        <li>Tents, tables, chairs & linens</li>
-        <li>Decor packages & themed supplies</li>
-      </ul>
-    </div>
-    <div>
-      <h4>Perfect For:</h4>
-      <ul class="feature-list">
-        <li>Birthday parties & kids' events</li>
-        <li>Weddings & rehearsal dinners</li>
-        <li>Corporate events & team building</li>
-        <li>School functions & fundraisers</li>
-        <li>Festivals & community gatherings</li>
-      </ul>
+  <div class="party-rentals-section">
+    <h3>🎉 Party Rentals for Every Occasion</h3>
+    <div class="party-rentals-container">
+      <div class="party-rentals-column">
+        <h4>What We Rent:</h4>
+        <ul class="feature-list">
+          <li>Popcorn machines & cotton candy makers</li>
+          <li>Chocolate fountains & snow cone machines</li>
+          <li>Catering equipment & serving ware</li>
+          <li>Tents, tables, chairs & linens</li>
+          <li>Decor packages & themed supplies</li>
+        </ul>
+      </div>
+      <div class="party-rentals-column">
+        <h4>Perfect For:</h4>
+        <ul class="feature-list">
+          <li>Birthday parties & kids' events</li>
+          <li>Weddings & rehearsal dinners</li>
+          <li>Corporate events & team building</li>
+          <li>School functions & fundraisers</li>
+          <li>Festivals & community gatherings</li>
+        </ul>
+      </div>
     </div>
   </div>
 
@@ -639,13 +684,15 @@ nav a {
   </div>
 </div>
 
-<!-- TITAN SECTION -->
+<!-- TITAN SECTION - Logo and text both link to Facebook -->
 <div class="titan-section">
   <div class="tbp-footer">
-    <div class="tbp-logo">
-      <img src="https://github.com/71240/Sugarplum/raw/main/TransparentTitanLogo.png" alt="Titan Business Pros LLC">
-    </div>
-    <p>Website Created By <strong>Titan Business Pros LLC</strong></p>
+    <a href="https://www.facebook.com/TitanBusinessPros" target="_blank">
+      <div class="tbp-logo">
+        <img src="https://github.com/71240/Sugarplum/raw/main/TransparentTitanLogo.png" alt="Titan Business Pros LLC">
+      </div>
+      <p>Website Created By <strong>Titan Business Pros LLC</strong></p>
+    </a>
   </div>
 </div>
 
